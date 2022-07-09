@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <h1>wellcome to easy shop<img src="img/smily.png" style="width:40px;padding: 10px;" alt=""></h1>
+    <div>
+        <div id="item-box">
+
+            <table>
+                <tr id="title">
+                    <th>food items</th>
+                    <th>price</th>
+                    <th>quantity</th>
+                    <th>totalprice</th>
+
+                </tr>
+                <tr>
+                    <td>
+                        <div><img src="img/pizza.jpg" alt=""></div>
+                    </td>
+                    <td id="price">10$</td>
+                    <td>
+                        <div> <button onclick="addpizza()">+</button>
+
+                            <div id="number1">0</div>
+                            <button onclick="minuspizza()">-</button></div>
+                    </td>
+                    <td>
+                        <div id="text1">0</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div><img src="img/burger.png" alt=""></div>
+                    </td>
+                    <td id="price">8$</td>
+                    <td>
+                        <div> <button onclick="addburger()">+</button>
+                            <div id="number2">0</div>
+                            <button onclick="minusburger()">-</button></div>
+                    </td>
+                    <td>
+                        <div id="text2">0</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div><img src="img/fries.png" alt=""></div>
+                    </td>
+                    <td id="price">3$</td>
+                    <td>
+                        <div> <button onclick="addfries()">+</button>
+                            <div id="number3">0</div>
+                            <button onclick="minusfries()">-</button></div>
+                    </td>
+                    <td>
+                        <div id="text3">0</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div><img src="img/icecream.jpg" alt=""></div>
+                    </td>
+                    <td id="price">2$</td>
+                    <td>
+                        <div> <button onclick="addicecream()">+</button>
+                            <div id="number4">0</div>
+                            <button onclick="minusicecream()">-</button></div>
+                    </td>
+                    <td>
+                        <div id="text4">0</div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div style="display:flex">
+            <div id="totalpayment">total payment</div>
+            <div id="basket" style="padding-left:7px"></div>
+            <div style="color:white;font-size:15px">$</div>
+        </div>
+        <div style="margin-left:800px"> <button onclick="makepayment()" style="background-color:pink;border-radius:15px">payment</button>
+            <div id="text"></div>
+            <div id="finaltext" style="color:white"></div>
+            <div id="finalcard"></div>
+        </div>
+    </div>
+</body>
+<script>
+    let int1 = document.getElementById("number1")
+    let int2 = document.getElementById("number2")
+    let int3 = document.getElementById("number3")
+    let int4 = document.getElementById("number4")
+    let price = document.getElementById("price")
+    const pizzaAmount = document.getElementById("text1")
+    const burgerAmount = document.getElementById("text2")
+    const friesAmount = document.getElementById("text3")
+    const icecreamAmount = document.getElementById("text4")
+        // const basket = document.getElementById("basket")
+    let pizzainteger = 0
+    let burgerinteger = 0
+    let friesinteger = 0
+    let icecreaminteger = 0
+
+    let pizzaprice = 10
+    let burgerprice = 8
+    let friceprice = 3
+    let icecreamprice = 2
+
+    var totalpizza = 0
+    var totalburger = 0
+    var totalicecream = 0
+    var totalfries = 0
+
+    function addpizza() {
+        pizzainteger += 1
+        int1.innerHTML = pizzainteger
+        totalpizza = pizzaprice * pizzainteger
+        pizzaAmount.innerHTML = totalpizza
+        totalitem()
+    }
+
+    function minuspizza() {
+        pizzainteger -= 1
+        int1.innerHTML = pizzainteger
+        totalpizza = pizzaprice * pizzainteger
+        pizzaAmount.innerHTML = totalpizza
+        totalitem()
+    }
+
+    function addburger() {
+        burgerinteger += 1
+        int2.innerHTML = burgerinteger
+        totalburger = burgerprice * burgerinteger
+        burgerAmount.innerHTML = totalburger
+        totalitem()
+    }
+
+    function minusburger() {
+        burgerinteger -= 1
+        int2.innerHTML = burgerinteger
+        totalburger = burgerprice * burgerinteger
+        burgerAmount.innerHTML = totalburger
+        totalitem()
+    }
+
+    function addfries() {
+
+        friesinteger += 1
+        int3.innerHTML = friesinteger
+        totalfries = friceprice * friesinteger
+        friesAmount.innerHTML = totalfries
+        totalitem()
+    }
+
+    function minusfries() {
+
+        friesinteger -= 1
+        int3.innerHTML = friesinteger
+        totalfries = friceprice * friesinteger
+        friesAmount.innerHTML = totalfries
+        totalitem()
+    }
+
+    function addicecream() {
+        icecreaminteger += 1
+        int4.innerHTML = icecreaminteger
+        totalicecream = icecreamprice * icecreaminteger
+        icecreamAmount.innerHTML = totalicecream
+        totalitem()
+    }
+
+    function minusicecream() {
+        icecreaminteger -= 1
+        int4.innerHTML = icecreaminteger
+        totalicecream = icecreamprice * icecreaminteger
+        icecreamAmount.innerHTML = totalicecream
+    }
+
+    function totalitem() {
+
+        const totalbasket = totalfries + totalicecream + totalburger + totalpizza
+        const basket = document.getElementById("basket")
+        basket.innerHTML = totalbasket
+    }
+
+    function makepayment() {
+        var textinside, finalmessage
+        var confirmation = confirm("can you make the payment??")
+        if (confirmation == true && totalfries > 0 || totalburger > 0 || totalpizza > 0 || totalicecream) {
+            textinside = "Thank you you finished your payment!!"
+
+        } else {
+            textinside = "your payment is cancelled!!"
+            finalmessage = text
+        }
+        document.getElementById("finaltext").innerHTML = textinside
+        totalitem()
+
+    }
+</script>
+
+</html>

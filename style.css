@@ -1,0 +1,81 @@
+h1 {
+    color: rgb(245, 102, 197);
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+    font-family: "Papyrus", "Courier New", monospace;
+}
+
+#item-box {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    margin: 40px;
+}
+
+#item-box img {
+    width: 80px;
+    height: 80px;
+    border-radius: 85px;
+    padding: 20px;
+    margin-top: 5px;
+}
+
+#item-box button {
+    border-radius: 10px;
+    margin-left: 70px;
+}
+
+#number1,
+#number2,
+#number3,
+#number4 {
+    margin-left: 75px;
+    color: white
+}
+
+#text1,
+#text2,
+#text3,
+#text4 {
+    padding-left: 62px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(173, 241, 241);
+    font-size: 20px;
+}
+
+#title th {
+    padding-left: 40px;
+    font-size: 15px;
+    font-family: "Papyrus", "Courier New", monospace;
+    color: rgb(173, 241, 241);
+    background-color: rgb(101, 34, 89);
+    border-radius: 10px;
+}
+
+#price {
+    padding-left: 50px;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(173, 241, 241);
+}
+
+#basket {
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(173, 241, 241)
+}
+
+#totalpayment {
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(173, 241, 241);
+    margin-left: 800px;
+    margin-bottom: 30px;
+}
+
+body {
+    background-color: rgb(84, 65, 79);
+    border: 1px solid pink;
+}
